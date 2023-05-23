@@ -19,8 +19,10 @@ async function sendMessage (tweet, client){
   console.log(tweet)
   const url = "https://twitter.com/user/status/" + tweet.id;
   try {
+    console.log("triggered start")
     const channel = await client.channels.fetch(process.env.DISCORD_CHANNEL_ID)
     channel.send(`${process.env.CHANNEL_MESSAGE} ${url}`)
+    console.log("I have success")
   } catch (error) {
         console.error(error);
   }
@@ -51,13 +53,23 @@ async function  setup () {
   }
   try {
     console.log('Setting up Twitter....')
-    const body = {
+    /*const add_value_body = {
       "add": [
-        {"value": "from:"+ process.env.TWITTER_USER_NAME, "tag": "from Me!!"}
+        {"value": "from:"+ "chiharu_okr", "tag": "from 千春!!"},
+        {"value": "from:"+ "zheng_1230", "tag": "from 群主!!"},
       ]
     }
-   const r = await T.post("tweets/search/stream/rules", body);
-
+   const r = await T.post("tweets/search/stream/rules", body);*/
+   /*const delete_value_body={
+    delete: {
+      //IDs of all deleted user-specified stream filtering rules.
+      ids: ['1660858019725578240'],
+    },
+   }
+   const r = await T.post("tweets/search/stream/rules", delete_value_body)*/
+    const t=await T.get("tweets/search/stream/rules")
+    console.log(t)
+    console.log("execute line 61")
   } catch (err) {
     console.log(err)
   }
