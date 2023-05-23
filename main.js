@@ -55,11 +55,14 @@ async function  setup () {
     console.log('Setting up Twitter....')
     /*const add_value_body = {
       "add": [
-        {"value": "from:"+ "chiharu_okr", "tag": "from 千春!!"},
-        {"value": "from:"+ "zheng_1230", "tag": "from 群主!!"},
+        {"value": "from:"+ "aimi_sound", "tag": "from 愛美"},
+        {"value": "from:"+ "chiharu_okr", "tag": "from 千春"},
+        {"value": "from:"+ "aimistaff", "tag": "from 愛美staff"},
+        {"value": "from:"+ "teamy_official", "tag": "from Team-Y"},
+        {"value": "from:"+ "aikojinguji", "tag": "from 神宮寺愛子"},
       ]
     }
-   const r = await T.post("tweets/search/stream/rules", body);*/
+   const r = await T.post("tweets/search/stream/rules", add_value_body);*/
    /*const delete_value_body={
     delete: {
       //IDs of all deleted user-specified stream filtering rules.
