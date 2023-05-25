@@ -17,8 +17,9 @@ var T = new Twit({
 //   //only show owner tweets
 async function sendMessage (tweet, client){
   console.log(tweet)
-  const url = "https://twitter.com/user/status/" + tweet.id;
+  
   try {
+    const url = "https://twitter.com/user/status/" + tweet.id;
     console.log("triggered start")
     const channel = await client.channels.fetch(process.env.DISCORD_CHANNEL_ID)
     channel.send(`${process.env.CHANNEL_MESSAGE} ${url}`)
